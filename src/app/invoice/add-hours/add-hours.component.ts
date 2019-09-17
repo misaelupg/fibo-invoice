@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddHoursComponent implements OnInit {
 
+  date13: Date;
+
   constructor() { }
 
   ngOnInit() {
