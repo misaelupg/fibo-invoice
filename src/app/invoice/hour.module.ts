@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddHoursComponent } from './add-hours/add-hours.component';
 import { HourRoutingModule } from './hour-routing.module';
+import { CalendarModule } from 'primeng/calendar';
 
 
 
@@ -9,7 +10,8 @@ import { HourRoutingModule } from './hour-routing.module';
   declarations: [AddHoursComponent],
   imports: [
     CommonModule,
-    HourRoutingModule
+    HourRoutingModule,
+    CalendarModule,
   ]
 })
 export class HourModule { }
