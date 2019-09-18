@@ -5,6 +5,8 @@ import { ProjectRoutingModule } from './project-routing.module';
 
 import { AddProjectComponent } from './add-project/add-project.component';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { ProjectService } from './project.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,7 +14,11 @@ import { ProjectListComponent } from './project-list/project-list.component';
   declarations: [AddProjectComponent, ProjectListComponent],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    ProjectRoutingModule,
+    HttpClientModule
+  ],
+  providers: [
+    ProjectService
   ]
 })
 export class ProjectModule { }
