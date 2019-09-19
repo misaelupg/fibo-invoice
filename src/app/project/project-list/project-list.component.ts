@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; 
 
 import { ProjectService } from './../project.service';
 
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
-  styles: []
+  styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
 
-  projects: IProject[] = [];
-  constructor(private projectService: ProjectService) { }
+  projects: IModelResponse[] = [];
+  constructor(private projectService: ProjectService,  private router: Router) { }
 
   ngOnInit() {
     this.getAllProjects();
@@ -19,7 +20,6 @@ export class ProjectListComponent implements OnInit {
   getAllProjects() {
     this.projectService.GetAllProjects()
       .then((response) => {
-        console.log(response);
         this.projects = response;
       })
       .catch((error) => {

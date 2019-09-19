@@ -1,7 +1,10 @@
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
         <h3 class="text-themecolor">Listado de proyectos</h3>
-    </div>         
+    </div>   
+    <div class="col-md-7 align-self-center">
+        <a [routerLink]="[ '/project/add']" class="btn waves-effect waves-light btn-primary pull-right">Nuevo Proyecto</a>
+    </div>      
 </div>
 
 <div class="row">
@@ -9,7 +12,7 @@
         <div class="card">            
             <div class="card-body">               
                     <div class="table-responsive m-t-40">
-                        <table id="myTable" class="table table-bordered table-striped">
+                        <table id="proyectTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -18,7 +21,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let project of projects" >
+                                <tr *ngFor="let project of projects" (click)="router.navigate(['project/add', project.id])" >
                                     <td> {{ project.id }} </td>
                                     <td> {{ project.name }} </td>
                                     <td> {{ project.description }} </td>

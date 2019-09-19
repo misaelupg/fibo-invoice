@@ -14,8 +14,12 @@ export class ProjectService {
 
   constructor(private http: HttpClient) { }
 
-  AddProject(project: IProject) : Promise<IModelResponse> {
-    return this.http.post<IModelResponse>('https:localhost:5001/api/project/add', project, httpOptions).toPromise();
+  AddProject(project: IProject): Promise<any> {
+    return this.http.post<any>('https:localhost:5001/api/project/add', project, httpOptions).toPromise();
+
+  }
+  UpdateProject(id: number, project: IProject): Promise<any> {
+    return this.http.put<any>(`https:localhost:5001/api/project/${id}`, project,  httpOptions).toPromise();
   }
 
   GetAllProjects(): Promise<Array<IModelResponse>> {
@@ -25,4 +29,5 @@ export class ProjectService {
   GetRpojectById(id: number): Promise<IModelResponse> {
     return this.http.get<IModelResponse>(`https:localhost:5001/api/project/${id}`).toPromise();
   }
+
 }
