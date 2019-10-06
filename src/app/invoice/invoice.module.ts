@@ -9,8 +9,12 @@ import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatIconModule, MatListModule, MatSelectModule, MatTableModule} from '@angular/material';
+import {MatIconModule, MatListModule, MatSelectModule, MatSnackBarModule, MatSnackBarRef, MatTableModule} from '@angular/material';
 import {ActivitiesListComponent} from './activities-list/activities-list.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {ActivityService} from './activity.service';
+import {MemberService} from '../member/member.service';
 
 
 @NgModule({
@@ -19,6 +23,7 @@ import {ActivitiesListComponent} from './activities-list/activities-list.compone
     CommonModule,
     MatCardModule,
     InvoiceRoutingModule,
+    MatMomentDateModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
@@ -28,6 +33,13 @@ import {ActivitiesListComponent} from './activities-list/activities-list.compone
     MatSelectModule,
     MatTableModule,
     MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSnackBarModule,
+  ],
+  providers: [
+    ActivityService,
+    MemberService,
   ]
 })
 export class InvoiceModule { }

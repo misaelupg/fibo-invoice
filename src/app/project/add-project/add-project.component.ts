@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectService } from '../project.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-add-project',
@@ -17,7 +18,8 @@ export class AddProjectComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private projectService: ProjectService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.projectForm = this.fb.group({
@@ -64,8 +66,7 @@ export class AddProjectComponent implements OnInit {
         .then(() => {
           this.projectForm.get('name').setValue('');
           this.projectForm.get('description').setValue('');
-
-          this.router.navigate(['/project/list']);
+          this.router.navigate(['/project/list']).then(result => this.openSnackBar('Saved correctly', 'Dismiss'));
         })
         .catch((error) => { console.error('Error al insertar el registro', error); });
     } else if(this.status === 'update') {
@@ -74,9 +75,15 @@ export class AddProjectComponent implements OnInit {
           this.projectForm.get('name').setValue('');
           this.projectForm.get('description').setValue('');
 
-          this.router.navigate(['/project/list']);
+          this.router.navigate(['/project/list']).then(result => this.openSnackBar('Saved correctly', 'Dismiss'));;
         })
         .catch((error) => { console.error('Error al actualizar el registro', error); });
     }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }
