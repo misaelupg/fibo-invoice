@@ -1,0 +1,24 @@
+.example-sidenav-content {
+  height: 100%;
+  width: 100%;
+}
+
+.example-sidenav {
+  padding: 0;
+  width: 300px;
+}
+
+mat-drawer {
+  mat-icon {
+    opacity: .6;
+    margin-right: .5em;
+  }
+}
+
+mat-drawer-content {
+  height: 100%;
+}
+
+.example-sidenav-content {
+  padding: 32px 12px;
+}

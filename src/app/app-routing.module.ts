@@ -3,7 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'invoice', loadChildren: './invoice/hour.module#HourModule'},
+  { path: '',
+    redirectTo: '/invoice',
+    pathMatch: 'full'
+  },
+  { path: 'invoice', loadChildren: './invoice/invoice.module#InvoiceModule'},
   { path: 'project', loadChildren: './project/project.module#ProjectModule'}
 ];
 

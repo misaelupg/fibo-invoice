@@ -1,21 +1,30 @@
 <div id="main-wrapper">
-    <app-header></app-header>
-    <app-sidebar></app-sidebar>
+  <mat-toolbar>
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Fibo Invoicing</span>
+  </mat-toolbar>
+  <mat-drawer-container class="example-container" autosize hasBackdrop="true">
+    <mat-drawer #drawer class="example-sidenav" mode="side" disableClose="false">
+      <mat-action-list>
+        <button (click)="drawer.close()" [routerLink]="[ '/invoice/list' ]"  mat-list-item >
+          <mat-icon mat-list-icon>access_time</mat-icon>
+          Horas
+        </button>
+        <button (click)="drawer.close()" mat-list-item><mat-icon mat-list-icon>list_alt</mat-icon>
+          Proyectos
+        </button>
+      </mat-action-list>
+    </mat-drawer>
 
-    <div class="page-wrapper">
-        <div class="container-fluid">            
-
-            <router-outlet></router-outlet>            
-            <!-- <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            This is some text within a card block.
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
+    <div class="example-sidenav-content">
+      <div class="page-wrapper">
+        <div class="container-fluid">
+          <router-outlet></router-outlet>
         </div>
+      </div>
     </div>
+
+  </mat-drawer-container>
 </div>

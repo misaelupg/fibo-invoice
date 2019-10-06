@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  overflow: auto;
+}
+
+.mat-row, .mat-header-row {
+  background: white;
+  min-width: 1400px;
+}
+
+.mat-cell, .mat-header-cell {
+  min-width: 200px;
+}
+
+.mat-column-hours {
+  min-width: 80px;
+}
+
+.mat-column-date {
+  min-width: 120px;
+}
+
+.add-fab-icon {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+
