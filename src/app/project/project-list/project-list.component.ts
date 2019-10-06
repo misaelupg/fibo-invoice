@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 import { ProjectService } from './../project.service';
 
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
-  styleUrls: ['./project-list.component.css']
+  styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
 
   projects: IModelResponse[] = [];
+  displayedColumns: string[] = ['id', 'name', 'description'];
+
   constructor(private projectService: ProjectService,  private router: Router) { }
 
   ngOnInit() {

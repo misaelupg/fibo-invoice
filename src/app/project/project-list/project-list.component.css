@@ -1,7 +1,0 @@
-#proyectTable tbody tr {
-    cursor: pointer;
-}
-
-#proyectTable tbody tr:hover {
-    background-color: #bfb5b512;
-}

@@ -65,7 +65,6 @@ const ACTIVITY_DATA: Activity[] = [
   selector: 'app-activities-list',
   templateUrl: './activities-list.component.html',
   styleUrls: ['./activities-list.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class ActivitiesListComponent implements OnInit {
   displayedColumns: string[] = ['projectName', 'hours', 'date', 'memberName', 'description'];

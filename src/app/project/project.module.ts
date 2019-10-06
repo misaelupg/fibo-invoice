@@ -8,6 +8,7 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectService } from './project.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule, MatIconModule, MatTableModule} from '@angular/material';
 
 
 
@@ -20,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     ProjectRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [
     ProjectService

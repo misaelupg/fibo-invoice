@@ -22,3 +22,16 @@ mat-drawer-content {
 .example-sidenav-content {
   padding: 32px 12px;
 }
+
+mat-drawer-container {
+  top: 56px;
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+}
+
+.mat-table {
+  background: transparent;
+}
