@@ -8,7 +8,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectService } from './project.service';
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule, MatIconModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatTableModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 
@@ -25,6 +26,9 @@ import {MatButtonModule, MatIconModule, MatTableModule} from '@angular/material'
     MatTableModule,
     MatIconModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule,
   ],
   providers: [
     ProjectService
