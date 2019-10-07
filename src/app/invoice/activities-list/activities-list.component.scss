@@ -1,12 +1,11 @@
 table {
-  width: 100%;
   overflow: auto;
   background: none;
 }
 
-.mat-row, .mat-header-row {
-  min-width: 1400px;
-}
+//.mat-row, .mat-header-row {
+//  min-width: 1400px;
+//}
 
 .mat-cell, .mat-header-cell {
   min-width: 200px;
@@ -24,6 +23,12 @@ table {
   position: fixed;
   right: 30px;
   bottom: 30px;
+}
+
+.table-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }
 
 

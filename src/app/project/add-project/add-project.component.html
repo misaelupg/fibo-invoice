@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-8 offset-lg-2">
     <h4 class="subheading">Nuevo proyecto</h4>
     <form action="#" novalidate [formGroup]="projectForm" (ngSubmit)="onSubmit()" autocomplete="off">
       <input type="hidden" formControlName="id" value="0" name="id">
@@ -33,47 +33,3 @@
     </form>
   </div>
 </div>
-
-
-<!--<div class="row page-titles">-->
-<!--    <div class="col-md-5 align-self-center">-->
-<!--        <h3 class="text-themecolor">Agregar proyecto</h3>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--<div class="row">-->
-<!--    <div class="col-lg-12">-->
-<!--        <div class="card">-->
-<!--            <div class="card-body">-->
-<!--                <form novalidate [formGroup]="projectForm" (ngSubmit)="onSubmit()" autocomplete="off">-->
-<!--                    <input type="hidden" formControlName="id" value="0" name="id">-->
-<!--                    <div class="form-body">-->
-<!--                        <div class="row p-t-20">-->
-<!--                            <div class="col-md-12">-->
-<!--                                <div class="form-group">-->
-<!--                                    <label class="control-label">Proyecto</label>-->
-<!--                                    <input type="text" formControlName="name" class="form-control" placeholder="Proyecto chido">-->
-<!--                                    <small class="form-control-feedback"> campo obligatorio </small>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash;/row&ndash;&gt;-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-md-12">-->
-<!--                                <div class="form-group">-->
-<!--                                    <label class="control-label">Descripcion</label>-->
-<!--                                    <textarea formControlName="description" class="form-control" placeholder="Descripcion del proyecto chido" cols="30" rows="10"></textarea>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="form-actions">-->
-<!--                        <button type="submit" class="btn btn-success"> <i class="fa fa-check pull-left"></i> Guardar </button>-->
-<!--                        <a [routerLink]="[ '/project/list' ]" class="btn btn-inverse pull-right">Cancelar</a>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
