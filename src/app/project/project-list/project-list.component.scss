@@ -1,7 +1,28 @@
 table {
-  width: 100%;
+  overflow: auto;
   background: none;
 }
+
+//.mat-row, .mat-header-row {
+//  min-width: 1400px;
+//}
+
+.mat-cell, .mat-header-cell {
+  min-width: 200px;
+}
+
+.mat-column-id {
+  min-width: 80px;
+}
+
+.mat-column-name {
+  min-width: 160px;
+}
+
+.mat-column-description {
+  min-width: 420px;
+}
+
 
 .mat-fab {
   position: fixed;

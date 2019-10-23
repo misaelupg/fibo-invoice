@@ -19,7 +19,10 @@ export class ActivityService {
 
   AddActivity(activity: Activity): Promise<any> {
     return this.http.post<any>(`${this.serviceURL}/add`, activity, httpOptions).toPromise();
+  }
 
+  GetActivityByProject(projectId: number, selectedMonth: number): Promise<any> {
+    return this.http.get<any>(`${this.serviceURL}/project/${projectId}/${selectedMonth}`).toPromise();
   }
 
 }

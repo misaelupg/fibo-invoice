@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ActivityService} from './activity.service';
 import {MemberService} from '../member/member.service';
+import {ProjectService} from '../project/project.service';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import {MemberService} from '../member/member.service';
   providers: [
     ActivityService,
     MemberService,
+    ProjectService,
   ]
 })
 export class InvoiceModule { }
