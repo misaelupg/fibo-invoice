@@ -10,7 +10,7 @@ import { ProjectService } from './../project.service';
 })
 export class ProjectListComponent implements OnInit {
 
-  projects: IModelResponse[] = [];
+  projects: IProject[] = [];
   displayedColumns: string[] = ['id', 'name', 'description'];
 
   constructor(private projectService: ProjectService,  private router: Router) { }

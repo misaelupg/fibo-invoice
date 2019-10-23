@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectService {
-  private readonly serviceURL =  environment.apiUrl + 'project';
+  private readonly serviceURL =  environment.apiUrl + 'Project';
 
   constructor(private http: HttpClient) { }
 
@@ -24,8 +24,8 @@ export class ProjectService {
     return this.http.put<any>(`${this.serviceURL}/${id}`, project,  httpOptions).toPromise();
   }
 
-  GetAllProjects(): Promise<Array<IModelResponse>> {
-    return this.http.get<Array<IModelResponse>>(`${this.serviceURL}/all`).toPromise();
+  GetAllProjects(): Promise<Array<IProject>> {
+    return this.http.get<Array<IProject>>(`${this.serviceURL}/all`).toPromise();
   }
 
   GetRpojectById(id: number): Promise<IModelResponse> {

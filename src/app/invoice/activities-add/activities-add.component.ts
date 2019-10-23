@@ -35,10 +35,12 @@ export class ActivitiesAddComponent implements OnInit {
   activityForm: FormGroup;
   status = 'new';
   members: Array<Member>;
+  projects: Array<IProject>;
 
   constructor(private fb: FormBuilder,
               private activityService: ActivityService,
               private memberService: MemberService,
+              private projectService: ProjectService,
               private route: ActivatedRoute,
               private router: Router,
               private _snackBar: MatSnackBar) { }
@@ -46,6 +48,7 @@ export class ActivitiesAddComponent implements OnInit {
   ngOnInit() {
     this.activityForm = this.fb.group({
       dateMoment: moment(),
+      projectId: -1,
       date: moment().format('DD/MM/YYYY'),
       memberId: '',
       hours: 0,
@@ -53,6 +56,7 @@ export class ActivitiesAddComponent implements OnInit {
     });
 
     this.getAllMembers();
+    this.getAllProjects();
     const id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -60,6 +64,16 @@ export class ActivitiesAddComponent implements OnInit {
     this.memberService.GetAllMembers()
       .then((response) => {
         this.members = response;
+      })
+      .catch((error) => {
+        console.log('Error', error);
+      });
+  }
+
+  getAllProjects() {
+    this.projectService.GetAllProjects()
+      .then((response) => {
+        this.projects = response;
       })
       .catch((error) => {
         console.log('Error', error);
@@ -74,7 +88,9 @@ export class ActivitiesAddComponent implements OnInit {
         .then(() => {
           this.router.navigate(['/invoice/list']).then(result => this.openSnackBar('Saved correctly', 'Dismiss'));
         })
-        .catch((error) => { console.error('Error al insertar el registro', error); });
+        .catch((error) => {
+          this.openSnackBar(error.message, '');
+        });
   }
 
   openSnackBar(message: string, action: string) {

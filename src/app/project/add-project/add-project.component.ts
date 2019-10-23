@@ -56,9 +56,9 @@ export class AddProjectComponent implements OnInit {
 
   onSubmit() {
     const newProject: IProject = {
-      Id: this.projectForm.get('id').value,
-      Name: this.projectForm.get('name').value,
-      Description: this.projectForm.get('description').value,
+      id: -1,
+      name: this.projectForm.get('name').value,
+      description: this.projectForm.get('description').value,
     };
 
     if(this.status === 'new') {
@@ -70,7 +70,7 @@ export class AddProjectComponent implements OnInit {
         })
         .catch((error) => { console.error('Error al insertar el registro', error); });
     } else if(this.status === 'update') {
-      this.projectService.UpdateProject(newProject.Id, newProject)
+      this.projectService.UpdateProject(newProject.id, newProject)
         .then(() => {
           this.projectForm.get('name').setValue('');
           this.projectForm.get('description').setValue('');
