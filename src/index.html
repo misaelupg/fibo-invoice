@@ -13,10 +13,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .splash-screen {
+      background-color: #ECECEC;
+      color: #767676;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .splash-screen__text {
+      color: #767676;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 40px;
+      max-width: 150px;
+      line-height: 1.25em;
+    }
+  </style>
 </head>
 <body class="fix-header card-no-border fix-sidebar">
 
-  <app-root></app-root>
+  <app-root>
+    <div class="splash-screen">
+      <img class="splash-screen__logo" src="assets/images/logo-light.png" alt="Fibo Invoice Logo">
+      <p class="splash-screen__text">Activity and project tracker</p>
+    </div>
+  </app-root>
 
   <script src="./assets/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstra tether Core JavaScript -->
