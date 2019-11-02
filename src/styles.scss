@@ -18,7 +18,7 @@ form {
 .page-content {
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100vh - 155px);
+  height: calc(100vh - 180px);
 }
 
 @font-face {
@@ -67,7 +67,9 @@ form {
 }
 
 .mat-fab {
-
+  position: fixed !important;
+  right: 30px;
+  bottom: 85px;
   //background: linear-gradient(72.62deg, rgba(126, 61, 176, 0.31) -37.86%, rgba(6, 107, 153, 0.84) -37.84%, rgba(95, 95, 95, 0.77) 107.18%, #00A370 145.81%);
   //background-color: #2358DF;
   background: linear-gradient(25.74deg, rgba(61, 107, 176, 0.31) -37.86%, rgba(6, 107, 153, 0.84) -37.84%, rgba(16, 140, 180, 0.77) 107.18%, #00A370 145.81%);
