@@ -4,7 +4,7 @@ body { margin: 0; font-family: "TT Commons", "Helvetica Neue", sans-serif !impor
 
 #main-wrapper {
   height: calc(100% - 56px);
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .mat-form-field {
@@ -13,6 +13,12 @@ body { margin: 0; font-family: "TT Commons", "Helvetica Neue", sans-serif !impor
 
 form {
   margin-top: 22px;
+}
+
+.page-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 155px);
 }
 
 @font-face {
@@ -48,7 +54,7 @@ form {
 }
 
 .subheading {
-  margin-bottom: 1.25em;
+  margin-bottom: .75em;
   color: #727272;
   font-weight: 500;
   line-height: 1.25em;
@@ -93,6 +99,7 @@ form {
 }
 
 form {
+   margin-top: 0;
   .mat-flat-button {
     width: 100% !important;
     margin-bottom: 10px;

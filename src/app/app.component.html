@@ -7,10 +7,10 @@
       </div>
     </div>
     <div class="bottom-nav">
-      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="bold"><img src="../assets/images/logo-icon.png" alt="application-logo">Insights</mat-button-toggle>
-        <mat-button-toggle class="activities-button" value="italic"><mat-icon>list</mat-icon>Activities</mat-button-toggle>
-        <mat-button-toggle value="underline"><mat-icon>assignment</mat-icon>Admin</mat-button-toggle>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="invoice">
+        <mat-button-toggle [routerLink]="['/insights']" value="insights"><img src="../assets/images/logo-icon.png" alt="application-logo">Insights</mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/invoice']" class="activities-button" value="invoice"><mat-icon>list</mat-icon>Activities</mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/project']" value="admin"><mat-icon>assignment</mat-icon>Admin</mat-button-toggle>
       </mat-button-toggle-group>
     </div>
 </div>
