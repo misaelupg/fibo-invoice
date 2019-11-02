@@ -8,7 +8,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'invoice', loadChildren: './invoice/invoice.module#InvoiceModule'},
-  { path: 'project', loadChildren: './project/project.module#ProjectModule'}
+  { path: 'project', loadChildren: './project/project.module#ProjectModule'},
+  { path: 'insights', loadChildren: './insights/insights.module#InsightsModule'},
 ];
 
 @NgModule({

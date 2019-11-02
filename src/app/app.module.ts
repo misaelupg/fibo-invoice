@@ -8,7 +8,15 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule, MatIconModule, MatLineModule, MatListModule, MatSelectModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatIconModule,
+  MatLineModule,
+  MatListModule,
+  MatSelectModule,
+  MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -28,6 +36,7 @@ import {MatButtonModule, MatIconModule, MatLineModule, MatListModule, MatSelectM
     MatSelectModule,
     MatListModule,
     MatButtonModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

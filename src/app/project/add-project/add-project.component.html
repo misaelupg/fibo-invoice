@@ -1,35 +1,38 @@
-<div class="row">
-  <div class="col-lg-4 offset-lg-4">
-    <h4 class="subheading">Nuevo proyecto</h4>
-    <form action="#" novalidate [formGroup]="projectForm" (ngSubmit)="onSubmit()" autocomplete="off">
-      <input type="hidden" formControlName="id" value="0" name="id">
-      <div class="form-body">
-        <div class="row p-t-20">
-          <div class="col-md-12">
-            <mat-form-field appearance="outline">
-              <mat-label>Name</mat-label>
-              <input type="text" matInput placeholder="Horas" formControlName="name">
-            </mat-form-field>
+<h4 class="subheading">Nuevo proyecto</h4>
+<div class="page-content">
+  <div class="row">
+    <div class="col-lg-4 offset-lg-4">
+      <form action="#" novalidate [formGroup]="projectForm" (ngSubmit)="onSubmit()" autocomplete="off">
+        <input type="hidden" formControlName="id" value="0" name="id">
+        <div class="form-body">
+          <div class="row p-t-20">
+            <div class="col-md-12">
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput placeholder="Horas" formControlName="name">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput
+                          formControlName="description"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="3"
+                          cdkAutosizeMaxRows="6"></textarea>
+              </mat-form-field>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <mat-form-field appearance="outline">
-              <mat-label>Description</mat-label>
-              <textarea matInput
-                        formControlName="description"
-                        cdkTextareaAutosize
-                        #autosize="cdkTextareaAutosize"
-                        cdkAutosizeMinRows="3"
-                        cdkAutosizeMaxRows="6"></textarea>
-            </mat-form-field>
-          </div>
+        <div>
+          <button style="width: 50%" mat-flat-button color="primary" type="submit">Guardar</button>
+          <button style="width: 50%" mat-flat-button  [routerLink]="[ '/project/list' ]">Cancelar</button>
         </div>
-      </div>
-      <div>
-        <button style="width: 50%" mat-flat-button  [routerLink]="[ '/project/list' ]">Cancelar</button>
-        <button style="width: 50%" mat-flat-button color="primary" type="submit">Guardar</button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
+
 </div>

@@ -1,30 +1,16 @@
 <div id="main-wrapper">
-  <mat-toolbar>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Fibo Invoicing</span>
-  </mat-toolbar>
-  <mat-drawer-container class="example-container" autosize hasBackdrop="true">
-    <mat-drawer #drawer class="example-sidenav" mode="side" disableClose="false">
-      <mat-action-list>
-        <button (click)="drawer.close()" [routerLink]="[ '/invoice' ]"  mat-list-item >
-          <mat-icon mat-list-icon>access_time</mat-icon>
-          Registro de horas
-        </button>
-        <button (click)="drawer.close()" [routerLink]="[ '/project' ]" mat-list-item><mat-icon mat-list-icon>list_alt</mat-icon>
-          Proyectos
-        </button>
-      </mat-action-list>
-    </mat-drawer>
-
-    <div class="example-sidenav-content">
+    <div>
       <div class="page-wrapper">
         <div class="container-fluid">
           <router-outlet></router-outlet>
         </div>
       </div>
     </div>
-
-  </mat-drawer-container>
+    <div class="bottom-nav">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" value="invoice">
+        <mat-button-toggle [routerLink]="['/insights']" value="insights"><img src="../assets/images/logo-icon.png" alt="application-logo">Insights</mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/invoice']" class="activities-button" value="invoice"><mat-icon>list</mat-icon>Activities</mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/project']" value="admin"><mat-icon>assignment</mat-icon>Admin</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
 </div>
