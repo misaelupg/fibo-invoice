@@ -2,6 +2,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: "TT Commons", "Helvetica Neue", sans-serif !important; }
 
+#main-wrapper {
+  height: calc(100% - 56px);
+  overflow-y: hidden;
+}
 
 .mat-form-field {
   width: 100%;
@@ -9,6 +13,12 @@ body { margin: 0; font-family: "TT Commons", "Helvetica Neue", sans-serif !impor
 
 form {
   margin-top: 22px;
+}
+
+.page-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 180px);
 }
 
 @font-face {
@@ -23,7 +33,7 @@ form {
   font-family: 'TT Commons';
   src: url('./assets/font/TTCommons-Regular.woff2') format('woff2'),
   url('./assets/font/TTCommons-Regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -39,15 +49,61 @@ form {
   font-family: 'TT Commons';
   src: url('./assets/font/TTCommons-Bold.woff2') format('woff2'),
   url('./assets/font/TTCommons-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 600;
   font-style: normal;
 }
 
 .subheading {
-  margin-bottom: 1.25em;
+  margin-bottom: .75em;
+  color: #727272;
+  font-weight: 500;
+  line-height: 1.25em;
+  font-size: 32px;
 }
 
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
   color: rgba(0, 0, 0, .3);
+}
+
+.mat-fab {
+  position: fixed !important;
+  right: 30px;
+  bottom: 85px;
+  //background: linear-gradient(72.62deg, rgba(126, 61, 176, 0.31) -37.86%, rgba(6, 107, 153, 0.84) -37.84%, rgba(95, 95, 95, 0.77) 107.18%, #00A370 145.81%);
+  //background-color: #2358DF;
+  background: linear-gradient(25.74deg, rgba(61, 107, 176, 0.31) -37.86%, rgba(6, 107, 153, 0.84) -37.84%, rgba(16, 140, 180, 0.77) 107.18%, #00A370 145.81%);
+  &.mat-button-base {
+    box-sizing: content-box;
+  }
+}
+
+.mat-button-base.mat-primary {
+  //background-color: #2358DF;
+  background: linear-gradient(25.74deg, rgba(61, 107, 176, 0.31) -37.86%, rgba(6, 107, 153, 0.84) -37.84%, rgba(16, 140, 180, 0.77) 107.18%, #00A370 145.81%);
+  //background: linear-gradient(72.62deg, rgba(126, 61, 176, 0.31) -37.86%, rgba(6, 107, 153, 0.84) -37.84%, rgba(95, 95, 95, 0.77) 107.18%, #00A370 145.81%);
+}
+
+.mat-button-base.mat-flat-button {
+  border-radius: 10px;
+  font-family: "TT Commons", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 0;
+  padding-top: 3px;
+  height: 43px;
+  text-transform: uppercase;
+}
+
+.mat-flat-button {
+  background: none;
+  font-weight: 400;
+}
+
+form {
+   margin-top: 0;
+  .mat-flat-button {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
 }
